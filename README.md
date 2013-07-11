@@ -22,7 +22,7 @@ Or install it yourself as:
 	include SNMPDevice
 	 
 	printer_a = Device.new('10.247.1.20')
-	printer_a.load_config({'toner' => {:name_of_toner => '1.2.3.4.5.6.7.351.2', :toner_level => '1.2.3.4.5.6.7.351.3'}})
+	printer_a.set_config({'toner' => {:name_of_toner => '1.2.3.4.5.6.7.351.2', :toner_level => '1.2.3.4.5.6.7.351.3'}})
 	printer_a.toner_info # => [["name_of_toner","toner_level"], ["Yellow", "50"], ["Cyan", "100"], ["Magenta". "10"], ["Black", "0"]]
 
 Depending on the values in the hash or YAML config, you can call something like `paper_info` or `toner_info`. It uses Ruby's `method_missing` function to define names dynamically depending on the configuration values. The results of a function such as `toner_info` can then be used as needed in other ways, such as turning to `JSON` and outputting to Javascript to create a web application capable of monitoring various devices. 
