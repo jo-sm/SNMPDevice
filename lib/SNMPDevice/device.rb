@@ -18,7 +18,6 @@ module SNMPDevice
 		private
 		attr_accessor :snmp_object
 		def method_missing(symbol, *args)
-			require_config
 			if symbol.id2name.end_with?('_info') and @config.has_key?(symbol.id2name.split('_info')[0])
 				snmp_lookup(symbol.id2name.split('_info')[0])
 			else
@@ -29,6 +28,7 @@ module SNMPDevice
 			@snmp_object = SNMP::Manager.new(:host => ip_address)
 		end
 		def snmp_lookup(name)
+			require_config
 			lookup_table = Array.new
 			output = [[]]
 			@config[name].each do |n| 
