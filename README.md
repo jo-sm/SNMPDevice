@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-	require 'SNMPDevice/printer'
+	require 'SNMPDevice/device'
 	include SNMPDevice
 	 
 	printer_a = Device.new('10.247.1.20')
