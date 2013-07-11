@@ -21,7 +21,7 @@ Or install it yourself as:
 	require 'SNMPDevice/printer'
 	include SNMPDevice
 	 
-	printer_a = Printer.new('10.247.1.20')
+	printer_a = Device.new('10.247.1.20')
 	printer_a.load_config({'toner' => {:name_of_toner => '1.2.3.4.5.6.7.351.2', :toner_level => '1.2.3.4.5.6.7.351.3'}})
 	printer_a.toner_info # => [["name_of_toner","toner_level"], ["Yellow", "50"], ["Cyan", "100"], ["Magenta". "10"], ["Black", "0"]]
 
